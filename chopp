@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil ICP — Comprador SCNB · Germânia</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #f5f5f3;
+    color: #1a1a1a;
+    padding: 32px 16px;
+  }
+
+  .wrapper { max-width: 820px; margin: 0 auto; }
+
+  :root {
+    --bg:        #ffffff;
+    --bg-2:      #f5f5f3;
+    --bg-info:   #eff6ff;
+    --bg-warn:   #fffbeb;
+    --bg-danger: #fef2f2;
+    --bg-success:#f0fdf4;
+    --txt:       #1a1a1a;
+    --txt-2:     #555550;
+    --txt-3:     #9a9890;
+    --border:    #e5e4e0;
+    --info:      #1d6fb8;
+    --warn:      #92580a;
+    --danger:    #b91c1c;
+    --success:   #166534;
+  }
+
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--txt-3);
+    margin-bottom: 10px;
+  }
+
+  .persona-header {
+    background: var(--bg);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+  }
+  .persona-header h1 { font-size: 16px; font-weight: 600; color: var(--txt); margin-bottom: 4px; }
+  .persona-header p  { font-size: 12px; color: var(--txt-2); }
+
+  .divider { border: none; border-top: 0.5px solid var(--border); margin: 24px 0; }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+  .card { background: var(--bg-2); border-radius: 8px; padding: 12px 14px; }
+  .card-label { font-size: 11px; color: var(--txt-3); margin-bottom: 4px; }
+  .card-value { font-size: 14px; font-weight: 600; color: var(--txt); }
+  .card-sub   { font-size: 11px; color: var(--txt-2); margin-top: 3px; line-height: 1.45; }
+
+  .table-card { background: var(--bg); border: 0.5px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .table-row {
+    display: flex; gap: 8px; padding: 8px 14px;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 12px; align-items: center;
+  }
+  .table-row:last-child { border-bottom: none; }
+  .table-row.header {
+    background: var(--bg-2); font-size: 10px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em; color: var(--txt-3);
+  }
+  .col-name  { flex: 2.2; font-weight: 500; color: var(--txt); }
+  .col-val   { flex: 1; color: var(--txt-2); }
+  .col-extra { flex: 1.4; color: var(--txt-2); font-size: 11px; }
+  .col-tag   { flex: 1.2; text-align: right; }
+
+  .tag {
+    display: inline-block; background: var(--bg-info); color: var(--info);
+    font-size: 11px; font-weight: 500; padding: 3px 8px;
+    border-radius: 4px; margin: 2px; line-height: 1.4;
+  }
+  .tag-warn    { background: var(--bg-warn);    color: var(--warn); }
+  .tag-danger  { background: var(--bg-danger);  color: var(--danger); }
+  .tag-success { background: var(--bg-success); color: var(--success); }
+
+  .quote {
+    border-left: 3px solid var(--info); background: var(--bg-info);
+    border-radius: 0 6px 6px 0; padding: 9px 13px; margin: 6px 0;
+    font-size: 12px; font-style: italic; color: var(--txt-2); line-height: 1.6;
+  }
+
+  .insight {
+    background: var(--bg-warn); border-radius: 8px; padding: 11px 14px;
+    font-size: 12px; color: var(--warn); margin-bottom: 8px;
+    line-height: 1.6; border: 0.5px solid #fde68a;
+  }
+  .insight strong { font-weight: 600; }
+
+  .tags-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; font-size: 12px; }
+  .bar-label { width: 130px; color: var(--txt-2); flex-shrink: 0; }
+  .bar-track { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .bar-fill  { height: 100%; border-radius: 3px; background: var(--info); }
+  .bar-fill.red   { background: #C92B1E; }
+  .bar-fill.gold  { background: #FFA62C; }
+  .bar-fill.green { background: #16a34a; }
+  .bar-val { width: 32px; text-align: right; color: var(--txt-3); font-size: 11px; flex-shrink: 0; }
+
+  @media (max-width: 560px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .col-extra { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="persona-header">
+    <h1>Perfil ICP — Comprador SCNB (chopeira residencial)</h1>
+    <p>Base: 9 vendas fechadas · jan–mar 2026 · canal WhatsApp via Ads</p>
+  </div>
+
+  <!-- Amostra -->
+  <div class="section">
+    <div class="section-title">Distribuição da amostra</div>
+    <div class="table-card">
+      <div class="table-row header">
+        <div class="col-name">Cliente</div>
+        <div class="col-val">Produto</div>
+        <div class="col-val">Ticket</div>
+        <div class="col-val">Cidade</div>
+        <div class="col-extra">Profissão</div>
+        <div class="col-tag">Fonte</div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Helton Luiz de A. Gomes</div>
+        <div class="col-val">Master 110v</div><div class="col-val">R$ 8.919</div>
+        <div class="col-val">Lucianópolis/SP</div><div class="col-extra">Comerciante</div>
+        <div class="col-tag"><span class="tag">Google Ads</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Luciano André P. Corrêa</div>
+        <div class="col-val">Master 220v</div><div class="col-val">R$ 8.919</div>
+        <div class="col-val">S. Bernardo do Campo</div><div class="col-extra">—</div>
+        <div class="col-tag"><span class="tag tag-warn">Desconhecido</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Maria do S. P. Martins</div>
+        <div class="col-val">Master 220v</div><div class="col-val">R$ 8.919</div>
+        <div class="col-val">Campinas/SP</div><div class="col-extra">Comerciante</div>
+        <div class="col-tag"><span class="tag tag-warn">Desconhecido</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Vitor H. A. de Jesus</div>
+        <div class="col-val">Master 110v</div><div class="col-val">R$ 8.919</div>
+        <div class="col-val">Suzano/SP</div><div class="col-extra">—</div>
+        <div class="col-tag"><span class="tag">Google Ads</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Janete Pereira Lima</div>
+        <div class="col-val">Mini 110v</div><div class="col-val">R$ 6.999</div>
+        <div class="col-val">São Paulo (V. Suzana)</div><div class="col-extra">Administradora</div>
+        <div class="col-tag"><span class="tag tag-warn">Desconhecido</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Renato Flaquer</div>
+        <div class="col-val">Mini 110v</div><div class="col-val">R$ 6.999</div>
+        <div class="col-val">São Paulo (Moema)</div><div class="col-extra">Veterinário</div>
+        <div class="col-tag"><span class="tag tag-warn">Desconhecido</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Fabio Ramos Barbosa</div>
+        <div class="col-val">Mini 110v</div><div class="col-val">R$ 6.999</div>
+        <div class="col-val">Bragança Paulista/SP</div><div class="col-extra">Químico</div>
+        <div class="col-tag"><span class="tag">Google Ads</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Paulo José dos Passos</div>
+        <div class="col-val">Mini 110v</div><div class="col-val">R$ 6.999</div>
+        <div class="col-val">Rio Claro/SP</div><div class="col-extra">Empresário</div>
+        <div class="col-tag"><span class="tag tag-warn">Desconhecido</span></div>
+      </div>
+      <div class="table-row">
+        <div class="col-name">Australio R. Prado Filho</div>
+        <div class="col-val">Mini 220v</div><div class="col-val">R$ 6.999</div>
+        <div class="col-val">Porangaba/SP</div><div class="col-extra">—</div>
+        <div class="col-tag"><span class="tag tag-warn">Desconhecido</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Métricas -->
+  <div class="section">
+    <div class="section-title">Métricas consolidadas</div>
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-label">Vendas</div>
+        <div class="card-value">9</div>
+        <div class="card-sub">Jan–Mar 2026</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Ticket médio</div>
+        <div class="card-value">R$ 7.930</div>
+        <div class="card-sub">Total: R$ 71.370</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Split Master / Mini</div>
+        <div class="card-value">3 · 6</div>
+        <div class="card-sub">33% Master · 67% Mini</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Fonte identificada</div>
+        <div class="card-value">3 / 9</div>
+        <div class="card-sub">Todas Google Ads · 6 desconhecidas</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Demográfico -->
+  <div class="section">
+    <div class="section-title">Perfil demográfico</div>
+    <div class="grid-3" style="margin-bottom:10px;">
+      <div class="card">
+        <div class="card-label">Gênero</div>
+        <div class="card-value">7M · 2F</div>
+        <div class="card-sub">78% masculino</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Faixa etária (inferida)</div>
+        <div class="card-value">35–55 anos</div>
+        <div class="card-sub">Fabio: 51 · Janete: 53 · Renato: 54 · Helton: 42</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Estado civil</div>
+        <div class="card-value">Casado: 4</div>
+        <div class="card-sub">Divorciado: 1 · N/D: 4</div>
+      </div>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-label">Localização</div>
+        <div class="card-value">100% São Paulo</div>
+        <div class="card-sub">Interior domina: 7 cidades fora da capital</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Interior vs Capital</div>
+        <div class="card-value">7 · 2</div>
+        <div class="card-sub">Capital apenas Moema e V. Suzana</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Profissão declarada</div>
+        <div class="card-value">5 de 9</div>
+        <div class="card-sub">Comerciante · Adm · Vet · Químico · Empresário</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Produto -->
+  <div class="section">
+    <div class="section-title">Produto, voltagem e pagamento</div>
+    <div class="grid-3" style="margin-bottom:10px;">
+      <div class="card">
+        <div class="card-label">Produto mais vendido</div>
+        <div class="card-value">Mini Chopp</div>
+        <div class="card-sub">6 de 9 vendas · R$ 6.999 · 30 L/h</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Voltagem predominante</div>
+        <div class="card-value">110v: 6 · 220v: 3</div>
+        <div class="card-sub">Interior tende a 110v · capital/RMSP a 220v</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Forma de pagamento</div>
+        <div class="card-value">100% Crédito</div>
+        <div class="card-sub">12x · Paulo dividiu em 3 cartões diferentes</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-label" style="margin-bottom:10px;">Distribuição por produto</div>
+      <div class="bar-row"><div class="bar-label">Mini 110v</div><div class="bar-track"><div class="bar-fill" style="width:56%"></div></div><div class="bar-val">5</div></div>
+      <div class="bar-row"><div class="bar-label">Master 110v</div><div class="bar-track"><div class="bar-fill red" style="width:22%"></div></div><div class="bar-val">2</div></div>
+      <div class="bar-row"><div class="bar-label">Master 220v</div><div class="bar-track"><div class="bar-fill red" style="width:22%"></div></div><div class="bar-val">2</div></div>
+      <div class="bar-row" style="margin-bottom:0;"><div class="bar-label">Mini 220v</div><div class="bar-track"><div class="bar-fill gold" style="width:11%"></div></div><div class="bar-val">1</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Uso -->
+  <div class="section">
+    <div class="section-title">Perfil de uso (intenção declarada)</div>
+    <div class="grid-2" style="margin-bottom:12px;">
+      <div class="card">
+        <div class="card-label">Uso residencial / lazer</div>
+        <div class="card-value">Helton · Luciano · Renato · Vitor · Fabio · Paulo · Australio</div>
+        <div class="card-sub">Família, amigos, sítio, festas — ~78%</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Uso comercial / revenda</div>
+        <div class="card-value">Maria · Janete (parcial)</div>
+        <div class="card-sub">Bar próprio · revenda de chopp — ~22%</div>
+      </div>
+    </div>
+    <div class="quote">"Tenho interesse" → decidiu sozinho, sem pedir desconto. (Helton)</div>
+    <div class="quote">"Vou comprar sim seja o que Deus quiser né" — comprou depois de hesitar com o preço. (Maria)</div>
+    <div class="quote">"Já sei como funciona o chopp de vocês, aí é bom." — consumidor anterior da marca. (Luciano)</div>
+    <div class="quote">"Quero comprar a mini chopeira" — chegou com decisão tomada, sem precisar de convencimento. (Fabio)</div>
+    <div class="quote">Perguntou se tem loja próxima para pedidos futuros → usou o crédito antes mesmo da chopeira chegar. (Paulo)</div>
+    <div class="quote">"Meu chopp para o Carnaval tá garantido né" — pediu barril emprestado antes da chopeira entregar. Tem chácara em Porangaba. (Australio)</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Comportamento -->
+  <div class="section">
+    <div class="section-title">Comportamento de compra</div>
+    <div class="grid-3" style="margin-bottom:14px;">
+      <div class="card">
+        <div class="card-label">Ciclo médio de decisão</div>
+        <div class="card-value">1–4 dias</div>
+        <div class="card-sub">Fabio: 2 dias · Luciano: mesmo dia · Vitor: ~1 mês (lag no 1º contato)</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Nível de engajamento</div>
+        <div class="card-value">Alto</div>
+        <div class="card-sub">Fazem perguntas técnicas e operacionais antes de fechar</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Padrão de recontato</div>
+        <div class="card-value">Frequente</div>
+        <div class="card-sub">Vitor ficou 1 mês sem responder e voltou por conta própria</div>
+      </div>
+    </div>
+    <div style="margin-bottom:12px;">
+      <div class="section-title" style="margin-bottom:8px;">Dúvidas mais comuns antes do fechamento</div>
+      <div class="tags-wrap">
+        <span class="tag">Como funciona o crédito de chopp</span>
+        <span class="tag">Prazo de entrega</span>
+        <span class="tag">Instalação inclusa?</span>
+        <span class="tag">Voltagem disponível</span>
+        <span class="tag">Aceita outros barris?</span>
+        <span class="tag">A chopeira fica comigo?</span>
+        <span class="tag">Tem loja próxima para pedidos futuros?</span>
+        <span class="tag">Tem desconto à vista?</span>
+        <span class="tag tag-success">Projetor 4K (brinde)</span>
+      </div>
+    </div>
+    <div>
+      <div class="section-title" style="margin-bottom:8px;">Objeções identificadas</div>
+      <div class="tags-wrap">
+        <span class="tag tag-danger">Valor alto de investimento</span>
+        <span class="tag tag-warn">Dúvida sobre prazo de entrega</span>
+        <span class="tag tag-warn">Limite de cartão insuficiente (dividiu em 3)</span>
+        <span class="tag tag-warn">Erro técnico no link de assinatura</span>
+        <span class="tag tag-warn">Confusão sobre o contrato (produto divergente na pág. 1)</span>
+        <span class="tag tag-warn">Logística de barris: frete e distância da loja</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Aceleradores -->
+  <div class="section">
+    <div class="section-title">Aceleradores decisivos identificados</div>
+    <div class="insight"><strong>Brinde projetor 4K</strong> — presente em todas as conversas disponíveis. Gerou reação imediata em Renato, Janete, Luciano, Vitor e Fabio. Maria fechou após hesitar no preço quando o brinde foi reforçado. Atenção: houve confusão pós-venda (bot negou o brinde na conversa do Fabio em 16/03) — risco de reputação que precisa ser corrigido no fluxo.</div>
+    <div class="insight"><strong>Crédito de chopp como "retorno do investimento"</strong> — todos querem entender o mecanismo antes de fechar. Quem entendeu o 50/50 avançou. Paulo foi além: pediu o primeiro barril antes da chopeira chegar, demonstrando alto engajamento com o produto.</div>
+    <div class="insight"><strong>Familiaridade prévia com a marca</strong> — Luciano e Fabio já conheciam o chopp Germânia. Consumidores anteriores convertem mais rápido e com menos objeções. Sinal importante para estratégia de remarketing.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Targeting -->
+  <div class="section">
+    <div class="section-title">Sinais para otimização de Ads (targeting)</div>
+    <div class="tags-wrap" style="margin-bottom:14px;">
+      <span class="tag tag-success">Homens 35–55 anos (predominante)</span>
+      <span class="tag tag-success">Interior do Estado de SP</span>
+      <span class="tag tag-success">Proprietários de imóvel (casa/sítio)</span>
+      <span class="tag tag-success">Entretenimento em casa e lazer</span>
+      <span class="tag tag-success">Interesse em chopp / cerveja artesanal</span>
+      <span class="tag tag-success">Comerciantes / empresários / profissionais liberais</span>
+      <span class="tag">Copa do Mundo como contexto sazonal</span>
+      <span class="tag">Casados com filhos</span>
+      <span class="tag">Consumidores recorrentes de chopp (bares, eventos)</span>
+    </div>
+    <div class="card">
+      <div class="card-label" style="margin-bottom:10px;">Cobertura geográfica</div>
+      <div class="bar-row"><div class="bar-label">Interior SP</div><div class="bar-track"><div class="bar-fill green" style="width:78%"></div></div><div class="bar-val">7</div></div>
+      <div class="bar-row" style="margin-bottom:0;"><div class="bar-label">Capital SP</div><div class="bar-track"><div class="bar-fill" style="width:22%"></div></div><div class="bar-val">2</div></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Lacunas -->
+  <div class="section" style="margin-bottom:0;">
+    <div class="section-title">Lacunas — dados que não temos ainda</div>
+    <div class="tags-wrap">
+      <span class="tag tag-warn">Fonte de 6 das 9 vendas: "Desconhecido"</span>
+      <span class="tag tag-warn">Renda / faixa econômica não declarada</span>
+      <span class="tag tag-warn">Consumo prévio de chopp não mapeado em todos</span>
+      <span class="tag tag-warn">Conversa completa do Vitor (transferida para outro número)</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
