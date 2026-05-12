@@ -30,7 +30,7 @@
 body {
   font-family: 'Barlow', sans-serif;
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   background: var(--page-bg);
   color: var(--grafite);
   min-height: 100vh;
@@ -68,11 +68,11 @@ body {
   margin-bottom: 4px;
 }
 .header-sub {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
   color: rgba(255,255,255,0.55);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
   margin-bottom: 20px;
 }
 .header-kpis {
@@ -90,9 +90,9 @@ body {
 }
 .kpi-label {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: rgba(255,255,255,0.32);
   margin-bottom: 2px;
@@ -158,10 +158,10 @@ body {
 .section { margin-bottom: 28px; }
 .section-title {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
   color: var(--txt-faint);
   margin-bottom: 10px;
   padding-left: 10px;
@@ -191,7 +191,7 @@ body {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2.5px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--txt-faint);
   margin-bottom: 6px;
@@ -210,10 +210,10 @@ body {
 }
 .card-sub {
   font-family: 'Barlow', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   color: var(--txt-mid);
   margin-top: 4px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ── Table ── */
@@ -227,9 +227,9 @@ body {
 .table-row {
   display: flex;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 9px 14px;
   border-bottom: 1px solid var(--border);
-  font-size: 12px;
+  font-size: 13px;
   align-items: center;
   font-family: 'Barlow', sans-serif;
 }
@@ -238,15 +238,15 @@ body {
 .table-row.header {
   background: var(--red);
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   color: #fff;
 }
 .col-name  { flex: 2.2; font-weight: 500; color: var(--grafite); }
 .col-val   { flex: 1;   color: var(--txt-mid); }
-.col-extra { flex: 1.4; color: var(--txt-mid); font-size: 11px; }
+.col-extra { flex: 1.4; color: var(--txt-mid); font-size: 12px; }
 .col-tag   { flex: 1.2; text-align: right; }
 
 /* ── Tags ── */
@@ -276,13 +276,13 @@ body {
   border-left: 3px solid var(--gold);
   background: #FFF8EE;
   border-radius: 0 6px 6px 0;
-  padding: 9px 14px;
+  padding: 10px 14px;
   margin: 6px 0;
   font-family: 'Barlow', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-style: italic;
   color: var(--txt-mid);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* ── Insights ── */
@@ -291,10 +291,10 @@ body {
   border-radius: var(--radius);
   padding: 12px 16px;
   font-family: 'Barlow', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: #166534;
   margin-bottom: 8px;
-  line-height: 1.65;
+  line-height: 1.7;
   border: 1px solid rgba(74,222,128,0.4);
 }
 .insight strong { font-weight: 600; color: #15803d; }
@@ -306,14 +306,14 @@ body {
   border-radius: 0 var(--radius) var(--radius) 0;
   padding: 10px 14px;
   font-family: 'Barlow', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   color: #7A2020;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 .alert-danger strong { font-weight: 700; color: #b91c1c; }
 
 /* ── Bar rows ── */
-.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; font-size: 12px; font-family: 'Barlow', sans-serif; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 7px; font-size: 13px; font-family: 'Barlow', sans-serif; }
 .bar-label { width: 130px; color: var(--txt-mid); flex-shrink: 0; }
 .bar-track { flex: 1; height: 6px; background: rgba(140,110,70,0.15); border-radius: 3px; overflow: hidden; }
 .bar-fill  { height: 100%; border-radius: 3px; background: var(--red); }
@@ -322,7 +322,7 @@ body {
 .bar-val { width: 32px; text-align: right; color: var(--txt-faint); font-size: 11px; flex-shrink: 0; }
 
 /* ── Note ── */
-.note { font-size: 10px; color: var(--txt-faint); font-style: italic; font-family: 'Barlow', sans-serif; }
+.note { font-size: 11px; color: var(--txt-faint); font-style: italic; font-family: 'Barlow', sans-serif; }
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
