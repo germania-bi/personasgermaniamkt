@@ -619,11 +619,14 @@ body {
 
       <hr class="divider">
 
-      <div class="section">
-        <div class="section-title">
+      <div class="section" style="background:var(--card-bg);border-radius:var(--radius);padding:20px;border:1px solid var(--border);box-shadow:var(--shadow-sm);">
+        <div class="section-title" style="color:var(--gold);border-left-color:var(--gold);font-size:14px;">
           Validação de Histórico
-          <span style="font-size:10px;font-weight:400;color:var(--txt-faint);text-transform:none;letter-spacing:0;margin-left:8px;">Vendas SCNB · set/25–jan/26 · base anterior ao RD+EZ</span>
         </div>
+        <p style="font-family:'Barlow',sans-serif;font-size:13px;color:var(--txt-mid);margin-bottom:14px;padding-left:10px;line-height:1.6;">
+          107 vendas SCNB · set/25–jan/26 · período anterior à integração RD+EZ.<br>
+          <span style="color:var(--txt-faint);font-size:12px;">Base com dados incompletos — nessa época não tínhamos o mesmo nível de rastreamento de hoje. Informações de perfil são inferidas com o que estava disponível no momento.</span>
+        </p>
         <div class="grid-4" style="margin-bottom:10px;">
           <div class="card">
             <div class="card-label">Amostra histórica</div>
@@ -667,9 +670,6 @@ body {
             <div class="card-value">92% Crédito 12x</div>
             <div class="card-sub">Pix: 5% · À vista: 7%</div>
           </div>
-        </div>
-        <div class="alert-danger">
-          <strong>Divergências a monitorar:</strong> solteiros representam 26% no histórico vs. quase zero na base atual — segmento não capturado recentemente. Voltagem 220v domina no histórico (franqueados + múltiplos canais) mas 110v domina na base atual (canal direto/interior) — sinal de perfil geográfico distinto por canal de venda.
         </div>
       </div>
 
