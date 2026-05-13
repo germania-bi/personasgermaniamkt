@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://use.typekit.net/vlr1ohk.css">
 <link rel="stylesheet" href="https://use.typekit.net/yzj3pit.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -727,96 +728,11 @@ body {
             </div>
           </div>
 
-          <!-- MAPA INTERATIVO SP -->
-          <div id="sp-map-wrap" style="margin-top:14px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;position:relative;overflow:hidden;">
-            <div style="font-family:'gotham','Montserrat',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--txt-faint);margin-bottom:10px;">Mapa de compradores · Estado de SP</div>
-            <svg id="sp-map-svg" viewBox="-10 -10 820 530" style="width:100%;max-width:800px;height:auto;display:block;margin:0 auto;" xmlns="http://www.w3.org/2000/svg">
-              <!-- SP state shape (simplified) -->
-              <polygon fill="#fdf3e8" stroke="#c8a880" stroke-width="1.5"
-                points="54,45 189,27 324,9 459,18 549,45 684,135 774,270 792,333 711,387 549,432 324,495 99,405 0,342 9,207 54,45"/>
-              <!-- Faint interior zone tint -->
-              <polygon fill="rgba(201,43,31,0.05)" stroke="none"
-                points="54,45 459,18 549,45 590,293 536,276 499,244 452,313 282,240 54,45"/>
-              <!-- Region watermarks -->
-              <text x="260" y="290" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#C92B1F" opacity="0.35" font-weight="700" letter-spacing="2">INTERIOR SP</text>
-              <text x="590" y="395" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#555" opacity="0.35" font-weight="600" letter-spacing="1">METRO SP</text>
-
-              <!-- Interior SP — vermelho -->
-              <g class="spm" data-t="Lucianópolis|Helton Luiz de A. Gomes · Master 110v · R$8.919|Comerciante — Interior SP">
-                <circle cx="282" cy="240" r="8" fill="#C92B1F" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Campinas|Maria do S. P. Martins · Master 220v · R$8.919|Comerciante — Interior SP">
-                <circle cx="543" cy="289" r="8" fill="#C92B1F" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Bragança Paulista|Fabio Ramos Barbosa · Mini 110v · R$6.999|Químico — Interior SP">
-                <circle cx="590" cy="293" r="8" fill="#C92B1F" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Rio Claro|Paulo José dos Passos · Mini 110v · R$6.999|Empresário — Interior SP">
-                <circle cx="499" cy="244" r="8" fill="#C92B1F" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Porangaba|Australio R. Prado Filho · Mini 220v · R$6.999|Aposentado — Interior SP">
-                <circle cx="452" cy="313" r="8" fill="#C92B1F" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Paulínia|Rinaldo Adriano Ribeiro · Master 110v · R$8.919|Ger. Financeiro — Interior SP">
-                <circle cx="536" cy="276" r="8" fill="#C92B1F" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-
-              <!-- Grande SP — dourado -->
-              <g class="spm" data-t="S. Bernardo do Campo|Luciano André P. Corrêa · Master 220v · R$8.919|Empresário — Grande SP">
-                <circle cx="585" cy="368" r="8" fill="#f79946" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Suzano|Vitor H. A. de Jesus · Master 110v · R$8.919|Empresário — Grande SP">
-                <circle cx="614" cy="345" r="8" fill="#f79946" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="Mogi das Cruzes|William Batista de Miranda · Master 220v · R$8.919|Empresário — Grande SP">
-                <circle cx="624" cy="336" r="8" fill="#f79946" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-
-              <!-- Capital SP — grafite -->
-              <g class="spm" data-t="São Paulo — Moema|Renato Flaquer · Mini 110v · R$6.999|Veterinário — Capital SP">
-                <circle cx="572" cy="356" r="8" fill="#252018" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="São Paulo — Vila Suzana|Janete Pereira Lima · Mini 110v · R$6.999|Administradora — Capital SP">
-                <circle cx="562" cy="366" r="8" fill="#252018" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-              <g class="spm" data-t="São Paulo — S. Miguel Paulista|Antonio Mateos Lopes · Mini 220v · R$6.999|Comerciante — Capital SP">
-                <circle cx="600" cy="342" r="8" fill="#252018" stroke="#fff" stroke-width="2" style="cursor:pointer"/>
-              </g>
-            </svg>
-            <!-- Tooltip flutuante -->
-            <div id="spm-tip" style="display:none;position:absolute;background:#252018;color:#fff;font-family:'gotham','Montserrat',sans-serif;font-size:12px;line-height:1.6;padding:8px 12px;border-radius:6px;pointer-events:none;z-index:30;max-width:260px;box-shadow:0 4px 14px rgba(0,0,0,0.3);"></div>
+          <!-- MAPA REAL SP (Leaflet) -->
+          <div style="margin-top:14px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
+            <div style="font-family:'gotham','Montserrat',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--txt-faint);padding:12px 16px 8px;">Mapa de compradores · Estado de SP</div>
+            <div id="sp-real-map" style="height:420px;"></div>
           </div>
-          <script>
-          (function(){
-            var wrap = document.getElementById('sp-map-wrap');
-            var tip  = document.getElementById('spm-tip');
-            document.querySelectorAll('#sp-map-svg .spm').forEach(function(g){
-              var c = g.querySelector('circle');
-              var baseR = 8;
-              g.addEventListener('mouseenter', function(){
-                c.setAttribute('r', '11');
-                var p = this.dataset.t.split('|');
-                tip.innerHTML = '<strong>' + p[0] + '</strong>'
-                  + (p[1] ? '<br>' + p[1] : '')
-                  + (p[2] ? '<br><span style="opacity:0.65">' + p[2] + '</span>' : '');
-                tip.style.display = 'block';
-              });
-              g.addEventListener('mousemove', function(e){
-                var r = wrap.getBoundingClientRect();
-                var x = e.clientX - r.left + 14;
-                var y = e.clientY - r.top  - 14;
-                if (x + 270 > r.width)  x = e.clientX - r.left - 284;
-                if (y < 0)              y = 4;
-                tip.style.left = x + 'px';
-                tip.style.top  = y + 'px';
-              });
-              g.addEventListener('mouseleave', function(){
-                c.setAttribute('r', String(baseR));
-                tip.style.display = 'none';
-              });
-            });
-          })();
-          </script>
 
         </div>
         <!-- FIM MAPA GEOGRÁFICO -->
@@ -1286,12 +1202,67 @@ body {
   </div><!-- /wrapper -->
 </div><!-- /tab-content -->
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 function showTab(btn, id) {
   document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  if (id === 'tab-demografico') {
+    _initSpMap();
+    setTimeout(function(){ if (window._spMap) window._spMap.invalidateSize(); }, 120);
+  }
+}
+
+var _spMap = null;
+function _initSpMap() {
+  if (_spMap || !document.getElementById('sp-real-map')) return;
+  _spMap = L.map('sp-real-map', { scrollWheelZoom: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 18
+  }).addTo(_spMap);
+
+  var zoneColor = { interior: '#C92B1F', grande: '#f79946', capital: '#252018' };
+  var zoneLabel = { interior: 'Interior SP', grande: 'Grande SP', capital: 'Capital SP' };
+  var buyers = [
+    { lat: -22.37, lng: -49.97, city: 'Lucianópolis',              name: 'Helton Luiz de A. Gomes',    product: 'Master 110v', ticket: 'R$ 8.919', job: 'Comerciante',     zone: 'interior' },
+    { lat: -22.91, lng: -47.07, city: 'Campinas',                        name: 'Maria do S. P. Martins',     product: 'Master 220v', ticket: 'R$ 8.919', job: 'Comerciante',     zone: 'interior' },
+    { lat: -22.95, lng: -46.54, city: 'Bragança Paulista',          name: 'Fabio Ramos Barbosa',         product: 'Mini 110v',   ticket: 'R$ 6.999', job: 'Químico',   zone: 'interior' },
+    { lat: -22.41, lng: -47.56, city: 'Rio Claro',                       name: 'Paulo José dos Passos',  product: 'Mini 110v',   ticket: 'R$ 6.999', job: 'Empresário', zone: 'interior' },
+    { lat: -23.17, lng: -48.08, city: 'Porangaba',                       name: 'Australio R. Prado Filho',    product: 'Mini 220v',   ticket: 'R$ 6.999', job: 'Aposentado',      zone: 'interior' },
+    { lat: -22.77, lng: -47.15, city: 'Paulínia',                   name: 'Rinaldo Adriano Ribeiro',     product: 'Master 110v', ticket: 'R$ 8.919', job: 'Ger. Financeiro', zone: 'interior' },
+    { lat: -23.69, lng: -46.57, city: 'S. Bernardo do Campo',            name: 'Luciano André P. Corrêa', product: 'Master 220v', ticket: 'R$ 8.919', job: 'Empresário', zone: 'grande' },
+    { lat: -23.54, lng: -46.32, city: 'Suzano',                          name: 'Vitor H. A. de Jesus',        product: 'Master 110v', ticket: 'R$ 8.919', job: 'Empresário', zone: 'grande'   },
+    { lat: -23.52, lng: -46.19, city: 'Mogi das Cruzes',                 name: 'William Batista de Miranda',  product: 'Master 220v', ticket: 'R$ 8.919', job: 'Empresário', zone: 'grande'   },
+    { lat: -23.59, lng: -46.66, city: 'São Paulo – Moema',     name: 'Renato Flaquer',              product: 'Mini 110v',   ticket: 'R$ 6.999', job: 'Veterinário', zone: 'capital' },
+    { lat: -23.63, lng: -46.72, city: 'São Paulo – Vila Suzana', name: 'Janete Pereira Lima',       product: 'Mini 110v',   ticket: 'R$ 6.999', job: 'Administradora',  zone: 'capital' },
+    { lat: -23.51, lng: -46.44, city: 'São Paulo – S. Miguel P.', name: 'Antonio Mateos Lopes',    product: 'Mini 220v',   ticket: 'R$ 6.999', job: 'Comerciante',     zone: 'capital'  }
+  ];
+  var bounds = [];
+  buyers.forEach(function(b) {
+    var m = L.circleMarker([b.lat, b.lng], {
+      radius: 10,
+      fillColor: zoneColor[b.zone],
+      color: '#fff',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.92
+    }).addTo(_spMap);
+    m.bindPopup(
+      '<div style="font-family:sans-serif;font-size:13px;line-height:1.7;min-width:180px;">' +
+      '<strong>' + b.city + '</strong><br>' +
+      b.name + '<br>' +
+      b.product + ' &middot; ' + b.ticket + '<br>' +
+      '<span style="color:#888">' + b.job + ' &mdash; ' + zoneLabel[b.zone] + '</span>' +
+      '</div>',
+      { maxWidth: 260 }
+    );
+    bounds.push([b.lat, b.lng]);
+  });
+  _spMap.fitBounds(bounds, { padding: [40, 40] });
 }
 </script>
 
